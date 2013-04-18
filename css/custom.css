@@ -2,11 +2,30 @@ b {
   font-weight: bold;
 }
 #cv-header {
-  text-align: center;
+  /*text-align: center;*/
   background-color: #303030;
   color: #f0f0f0;
   margin-top: -10px;
-  padding: 15px 0px;
+  padding: 0px 0px 0px 0px ;
+
+}
+
+#cv-image {
+  text-align: center;
+  display: inline-block;
+  margin-left: 0%;
+  vertical-align:top;
+}
+#cv-details {
+  display: inline-block;
+  text-align: center;
+  margin-left: 10%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+#cv-image img {
+  width: 218px;
+  height: 150px;
 }
 .span2 { 
   width: 120px;
