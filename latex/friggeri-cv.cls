@@ -145,12 +145,12 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 \def\setSectionColor{
   \color{
     \ifcase\value{colorCounter}
-      headercolor\or
-      blue\or
-      red\or
-      orange\or
-      green\or
-      purple\else
+      headercolor\else
+      %blue\or
+      %red\or
+      %orange\or
+      %green\or
+      %purple\else
       headercolor\fi
   }
   \stepcounter{colorCounter}
@@ -201,6 +201,11 @@ BoldItalicFont=texgyreheros-bolditalic.otf
     }\\
     #5\vspace{\parsep}
   }\\}
+  \newcommand{\simpleentry}[2]{
+    \parbox[t]{2.5cm}{#1}
+    \parbox[t]{11.8cm}{#2\vspace{\parsep}}
+    \\
+  }
 
 %%%%%%%%%%%%%%
 % Side block %
