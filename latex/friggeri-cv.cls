@@ -117,26 +117,49 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 \RequirePackage{parskip}
 
 \newcounter{colorCounter}
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\else%
-        headercolor\fi%
-    } #1#2#3%
-  }%
-  \stepcounter{colorCounter}%
-}
 
-\renewcommand{\section}[1]{
+%\def\@sectioncolor#1#2#3{%
+  %{%
+    %\color{%
+      %\ifcase\value{colorCounter}%
+        %blue\or%
+        %red\or%
+        %orange\or%
+        %green\or%
+        %purple\else%
+        %headercolor\fi%
+    %} #1#2#3%
+  %}%
+  %\stepcounter{colorCounter}%
+%}
+
+%\renewcommand{\section}[1]{
+  %\par\vspace{\parskip}
+  %{%
+    %\LARGE\headingfont\color{headercolor}%
+    %\@sectioncolor #1%
+  %}
+  %\par\vspace{\parskip}
+%}
+
+\def\setSectionColor{
+  \color{
+    \ifcase\value{colorCounter}
+      headercolor\or
+      blue\or
+      red\or
+      orange\or
+      green\or
+      purple\else
+      headercolor\fi
+  }
+  \stepcounter{colorCounter}
+}
+\renewcommand{\section}[1] {
   \par\vspace{\parskip}
-  {%
-    \LARGE\headingfont\color{headercolor}%
-    \@sectioncolor #1%
+  {
+    \LARGE\headingfont\color{headercolor}
+    \setSectionColor #1
   }
   \par\vspace{\parskip}
 }
@@ -171,7 +194,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   }\\}
 
 \newcommand{\entry}[5]{
-  \parbox[t]{2.5cm}{#1\\ #2}&\parbox[t]{11.8cm}{
+  \parbox[t]{2.5cm}{#1\\ #2}\parbox[t]{11.8cm}{
     \textbf{#3}
     \hfill {
     	\footnotesize\addfontfeature{Color=lightgray} #4
