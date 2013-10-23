@@ -217,7 +217,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\parskip}{\Large\headingfont\color{headercolor} ##1}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
