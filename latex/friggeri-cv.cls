@@ -15,19 +15,23 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{white}{RGB}{255,255,255}
+%\definecolor{white}{RGB}{255,255,255}
+\definecolor{white}{HTML}{F7F0F0}
 
 \definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{4D4D4D}
+%\definecolor{gray}{HTML}{4D4D4D}
+\definecolor{gray}{HTML}{6E5353}
 \definecolor{lightgray}{HTML}{999999}
 
 \definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
+%\definecolor{orange}{HTML}{FDA333}
+\definecolor{orange}{HTML}{FF8C00}
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
+  \colorlet{gray}{HTML}{4D4D4D}
   \colorlet{green}{gray}
   \colorlet{orange}{gray}
   \colorlet{purple}{gray}
@@ -144,14 +148,22 @@ BoldItalicFont=texgyreheros-bolditalic.otf
 
 \def\setSectionColor{
   \color{
+    %\ifcase\value{colorCounter}
+      %headercolor\else
+      %%blue\or
+      %%red\or
+      %%orange\or
+      %%green\or
+      %%purple\else
+      %headercolor\fi
     \ifcase\value{colorCounter}
-      headercolor\else
+      orange\else
       %blue\or
       %red\or
       %orange\or
       %green\or
       %purple\else
-      headercolor\fi
+      orange\fi
   }
   \stepcounter{colorCounter}
 }
@@ -194,12 +206,12 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   }\\}
 
 \newcommand{\entry}[5]{
-  \parbox[t]{2.5cm}{#1\\ #2}\parbox[t]{11.8cm}{
+  \parbox[t]{2.5cm}{\addfontfeature{Color=lightgray}\small #1\vspace{4mm}\\ #2}\parbox[t]{11.8cm}{
     \textbf{#3}
     \hfill {
     	\footnotesize\addfontfeature{Color=lightgray} #4
     }\\
-    #5\vspace{\parsep}
+    #5\vspace{5mm}
   }\\}
   \newcommand{\simpleentry}[2]{
     \parbox[t]{2.5cm}{#1}
@@ -219,7 +231,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   \renewcommand{\section}[1]{
     \par\vspace{\parskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{3.6}(1.5, 4.53)
   \begin{flushright}
   \obeycr
 }{%
