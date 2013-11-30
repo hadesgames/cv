@@ -20,7 +20,8 @@
 
 \definecolor{darkgray}{HTML}{333333}
 %\definecolor{gray}{HTML}{4D4D4D}
-\definecolor{gray}{HTML}{6E5353}
+%\definecolor{gray}{HTML}{6E5353}
+\definecolor{gray}{HTML}{665151}
 \definecolor{lightgray}{HTML}{999999}
 
 \definecolor{green}{HTML}{C2E15F}
