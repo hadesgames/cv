@@ -232,7 +232,7 @@ BoldItalicFont=texgyreheros-bolditalic.otf
   \renewcommand{\section}[1]{
     \par\vspace{\parskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.53)
+  \begin{textblock}{3.7}(1.4, 4.53)
   \begin{flushright}
   \obeycr
 }{%
